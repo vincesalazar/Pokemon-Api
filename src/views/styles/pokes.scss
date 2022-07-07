@@ -1,0 +1,34 @@
+$col-bg:rgb(85, 107, 47);
+$col-bg-light:rgba(143, 168, 99, 0.514);
+body{
+.pokeCont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .poke{
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgba(143, 168, 99, 0.514);
+    transition: background-color .25s;
+    &:hover{
+      background-color: rgb(85, 107, 47);
+    }
+  }
+}
+}
+.searchBar{
+  outline: none;
+  border: none;
+  background-color:$col-bg-light;
+  padding: .76rem 1rem;
+  border-radius: .2rem;
+  font-size: 1.25rem;
+  color: white;
+  transition: background-color .25s;
+  &::placeholder{
+    color: white;
+  }
+    &:hover{
+      background-color: rgb(85, 107, 47);
+    }
+}
