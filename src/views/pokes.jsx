@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import gsap from "gsap";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// npm install @mui/material @emotion/react @emotion/styled
 import "./styles/pokes.scss";
 import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
 
 export default function Pokes(props) {
   const [response, setResponse] = useState();
@@ -13,13 +13,10 @@ export default function Pokes(props) {
   const [searchedPoke, setSearchedPoke] = useState();
   useEffect(() => {
     let tl = gsap.timeline();
-    // gsap.set("h1", { opacity: 1 });
-    // tl.from("h1", 1, { delay: 0.1, opacity: 0 });
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/?limit=905`)
       .then((r) => {
         setResponse(r.data.results);
-        // console.log(r.data.results[0].url.subString());
       })
       .catch((error) => {
         console.log(error);
@@ -38,27 +35,23 @@ export default function Pokes(props) {
         onChange={onChange}
         className="searchBar"
       />
-      {/* <TextField
-        onChange={onChange}
-        label="YES SIR"
-        sx={{ outlineColor: "white" }}
-      /> */}
       <MapSearchedPoke />
-      <h1>All Poke</h1>
+      <Typography variant="h3">
+        <h1>All Pokemon</h1>
+      </Typography>
       <MapPokemon />
     </div>
   );
-  function FindIndexPoke(url) {
-    let slicedUrl = url.slice(url.length - 4, url.length - 1);
-    let newUrl = slicedUrl.replace(/\D/g, "");
-    return newUrl;
-  }
   function MapSearchedPoke() {
+    function FindIndexPoke(url) {
+      let slicedUrl = url.slice(url.length - 4, url.length - 1);
+      let newUrl = slicedUrl.replace(/\D/g, "");
+      return newUrl;
+    }
     if (searchedPoke) {
       // console.log(searchedPoke + "HELLO???");
       return (
         <section className="pokeCont">
-          <h1>Searched Poke</h1>
           {searchedPoke.map((e, i) => (
             <Link to={"/" + FindIndexPoke(e.url)} className="link poke" key={i}>
               {e.name}

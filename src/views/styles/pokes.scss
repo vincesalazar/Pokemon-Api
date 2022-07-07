@@ -20,15 +20,19 @@ body{
   outline: none;
   border: none;
   background-color:$col-bg-light;
-  padding: .76rem 1rem;
+  padding: .76rem .2rem;
   border-radius: .2rem;
   font-size: 1.25rem;
   color: white;
   transition: background-color .25s;
+  text-align: center;
   &::placeholder{
     color: white;
   }
-    &:hover{
-      background-color: rgb(85, 107, 47);
-    }
+  &:hover{
+    background-color: rgb(85, 107, 47);
+  }
+  &:focus{
+    background-color: rgb(85, 107, 47);
+  }
 }
