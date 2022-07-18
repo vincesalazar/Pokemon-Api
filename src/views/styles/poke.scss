@@ -1,0 +1,66 @@
+$col-bg:#556b2f;
+$col-bg-light:rgba(143, 168, 99, 0.884);
+@mixin highlight {
+  background-color: $col-bg-light;
+  transition: background-color .25s;
+  margin: 1rem;
+  padding: 1rem;
+  &:hover{
+    background-color: $col-bg;
+  }
+}
+.title{
+  text-transform: capitalize;
+}
+.statCnt{
+  display: flex;
+  justify-content: center;
+  .statCard{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: $col-bg-light;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    p,h5{
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      padding: .2rem;
+    }
+  }
+}
+.listCntr{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  .list{
+    border-radius: .5rem;
+    background-color:$col-bg-light;
+    padding: 1rem;
+    margin: 1rem;
+    p,h4{
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      padding: .2rem;
+    }
+  }
+
+}
+.moveList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  p{
+    margin: .5rem;
+    padding: .5rem;
+    background-color:$col-bg-light;
+    // @include highlight();
+  }
+  h4{
+
+  }
+}

@@ -1,5 +1,14 @@
-$col-bg:rgb(85, 107, 47);
+$col-bg:#556b2f;
 $col-bg-light:rgba(143, 168, 99, 0.514);
+@mixin highlight {
+  background-color: $col-bg-light;
+  transition: background-color .25s;
+  margin: 1rem;
+  padding: 1rem;
+  &:hover{
+    background-color: $col-bg;
+  }
+}
 body{
 .pokeCont{
   display: flex;
@@ -8,10 +17,10 @@ body{
   .poke{
     margin: 1rem;
     padding: 1rem;
-    background-color: rgba(143, 168, 99, 0.514);
+    background-color: $col-bg-light;
     transition: background-color .25s;
     &:hover{
-      background-color: rgb(85, 107, 47);
+      background-color: $col-bg;
     }
   }
 }
@@ -21,18 +30,36 @@ body{
   border: none;
   background-color:$col-bg-light;
   padding: .76rem .2rem;
-  border-radius: .2rem;
+  border-radius: 100rem;
   font-size: 1.25rem;
   color: white;
   transition: background-color .25s;
   text-align: center;
+  cursor: pointer;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:red;
+    z-index: 1;
+  }
   &::placeholder{
     color: white;
   }
   &:hover{
     background-color: rgb(85, 107, 47);
+    &::placeholder{
+      color: rgba(255, 255, 255, 0.589);
+    }
   }
   &:focus{
     background-color: rgb(85, 107, 47);
+    &::placeholder{
+      color: rgba(255, 255, 255, 0.589);
+    }
   }
 }

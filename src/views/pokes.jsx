@@ -16,6 +16,7 @@ export default function Pokes(props) {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/?limit=905`)
       .then((r) => {
+        console.log(r.data.results);
         setResponse(r.data.results);
       })
       .catch((error) => {
@@ -28,7 +29,7 @@ export default function Pokes(props) {
 
   return (
     <div className="App">
-      <h2>{search}</h2>
+      {/* <h2>{search}</h2> */}
       <input
         placeholder="SEARCH"
         type="text"
@@ -59,8 +60,6 @@ export default function Pokes(props) {
           ))}
         </section>
       );
-    } else {
-      return <h3>Search for Pokemon!</h3>;
     }
   }
   function MapPokemon() {

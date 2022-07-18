@@ -15,7 +15,6 @@ root.render(
   <StrictMode>
     <BrowserRouter>
       <Nav />
-      {/* <LoadLine /> */}
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/:id" element={<Poke />} />
